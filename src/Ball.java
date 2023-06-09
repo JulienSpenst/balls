@@ -1,6 +1,6 @@
 import GLOOP.*;
 public class Ball{    
-    private GLKugel kugel;    
+    protected GLKugel kugel;
     private GLVektor bewegung;
     private double radius;
 
@@ -34,7 +34,8 @@ public class Ball{
     }
 
     public void werfen(GLVektor pI){ 
-        bewegung.addiere(pI); 
+        bewegung.addiere(pI);
+        System.out.println(pI.x);
     } 
 
 }
