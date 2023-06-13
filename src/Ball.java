@@ -1,7 +1,7 @@
 import GLOOP.*;
 public class Ball{    
     protected GLKugel kugel;
-    private GLVektor bewegung;
+    protected GLVektor bewegung;
     private double radius;
 
     public Ball(double pX, double pY, double pZ, double pRadius){

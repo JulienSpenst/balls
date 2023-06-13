@@ -1,6 +1,6 @@
 import GLOOP.*;
 public class Ballsimulation{
-    private GLKamera kamera;
+    private GLEntwicklerkamera kamera;
     GLLicht licht;
     GLHimmel himmel;
     GLBoden boden;
@@ -16,10 +16,11 @@ public class Ballsimulation{
     private ball4 ball4;
 
     private ball5 ball5;
+    private ball5 ball6;
     private Hindernis[] hindernis;
 
     public Ballsimulation(){
-        kamera = new GLSchwenkkamera(800,500);
+        kamera = new GLEntwicklerkamera(800,500);
         kamera.setzePosition(0,500,2000);
         licht  = new GLLicht();       
         boden  = new GLBoden("src/Boden.jpg");
@@ -48,6 +49,9 @@ public class Ballsimulation{
         ball5 = new ball5 (0,200,0, 20);
         ball5.werfen(new GLVektor(2,0,0));
 
+        ball6 = new ball5 (0,200,0, 20);
+        ball6.werfen(new GLVektor(2,0,0));
+
         fuehreAus();
     }
 
@@ -60,6 +64,7 @@ public class Ballsimulation{
             ball3.bewegeDich();
             ball4.bewegeDich();
             ball5.bewegeDich();
+            ball6.bewegeDich();
             for (int j=0; j<2; j++) {
                 ball.bearbeiteHindernis(hindernis[j]);
                 ball1.bearbeiteHindernis(hindernis[j]);
@@ -67,6 +72,7 @@ public class Ballsimulation{
                 ball3.bearbeiteHindernis(hindernis[j]);
                 ball4.bearbeiteHindernis(hindernis[j]);
                 ball5.bearbeiteHindernis(hindernis[j]);
+                ball6.bearbeiteHindernis(hindernis[j]);
             }
             Sys.warte();
         }
